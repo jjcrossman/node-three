@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="readingList">
   <head>
     <meta charset="utf-8">
     <title></title>
 <!--     <meta name="viewport" content="width" -->
   </head>
-  <body>
+  <body ng-controller="listCtrl">
 
-    <h1>Hello World</h1>
+    <h1>Reading List</h1>
+    <ul>
+      <li ng-repeat="book in readingList"><h3>Title: {{ book.title }}</h3><p>
+        Description: {{ book.description }}
+      </p></li>
+    </ul>
 
+    <hr>
+    <h2>Books</h2>
+    <ul>
+      <li ng-repeat="book in books"><h3>Title: {{ book.title }}</h3><p>
+        Description: {{ book.description }}
+      </p> <button ng-click="addToReadingList( book )">Add to Reading List</button></li>
+    </ul>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="./app.js"></script>
   </body>
 </html>
